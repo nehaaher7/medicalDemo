@@ -1,0 +1,63 @@
+
+<div class="parentContainer">
+	<div>
+		<h2>Order Details</h2>
+	</div>
+	<div class="orderContainer">
+		<div class="orderContainerInner">
+
+			<div class="orderTxtContainer">
+				<label>Patient Name : </label>
+			</div>
+			<div class="orderQtyContainer">
+				<input type="text" class="form-control" ng-model="patientName">
+			</div>
+		</div>
+		<div class="orderContainerInner">
+			<div class="orderTxtContainer">
+				<label>Reference Doctor Name : </label>
+			</div>
+			<div class="orderQtyContainer">
+				<input type="text" class="form-control" ng-model="refDocName">
+			</div>
+		</div>
+		<div class="orderContainerInner">
+			<div class="orderMedInputContainer">
+				<div class="orderTxtContainer">
+					<label>MEDICINE ID : </label>
+				</div>
+				<div class="orderQtyContainer">
+					<input type="text" class="form-control" ng-model="medicineID" ng-blur="checkMandatoryFields()">
+				</div>
+			</div>
+			<div class="orderQtyInputContainer">
+				<div class="orderTxtContainer">
+					<label>Quantity : </label>
+				</div>
+				<div class="orderQtyContainer">
+					<input type="text" class="form-control" ng-model="orderQty"  ng-blur="checkMandatoryFields()">
+				</div>
+			</div>
+			<div class="orderAddInputContainer">
+				<div class="orderAddbtnContainer">
+					<button type="button" class="btn btn-primary">ADD</button>
+					<!-- </div> -->
+				</div>
+
+			</div>
+			<!--
+<add-medicineid></add-medicineid>
+<div id="space-for-medicineID"></div>
+
+
+  -->
+
+			<div class="orderBtnGoContainer">
+				<button type="button" class="btn btn-primary" name="gobtn"
+					ng-click="goToMedicineDetails(orderQty)"> <!--ng-disabled="{{disableflagVal=disableflag}}">-->
+          GO</button>
+			</div>
+
+		</div>
+
+	</div>

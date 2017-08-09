@@ -1,0 +1,33 @@
+<div class="summaryContainer" ng-controller="summaryController">
+ <!--  <purchase-summary></purchase-summary> -->
+   <table class="table table-bordered">
+    <thead>
+    <tr>
+        <h2>Stock Details</h2>
+    </tr>
+    <tr>
+      <th>Medicine Code</th>
+       <th>Description</th>
+        <th>Price</th>
+        <th>Manufacturer </th>
+        <th>Vendor</th>
+         <th>Stock Count</th>
+   
+    </tr>
+    </thead>
+     <tbody>
+      <tr ng-repeat="StockObj in StockData">
+        <td>{{StockObj.medicineCode}}</td>
+          <td>{{StockObj.medicineDescription}}</td>
+            <td>{{StockObj.price|currency}}</td>
+            <td>{{StockObj.manufacturer}}</td>
+              <td>{{StockObj.vendor}}</td>
+                <td>{{StockObj.stockCount}}</td>
+        </tr>
+   
+   
+    </table>
+</div>
+
+  
+

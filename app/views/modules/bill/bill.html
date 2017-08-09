@@ -1,0 +1,75 @@
+ <div class="parentContainer">
+<div>
+<h2>Bill Details</h2>
+</div>
+ <br><br>
+
+ <table class="table table-bordered">
+    <thead>
+     <tr>
+   <th colspan="2">Patient Name
+   </th>
+   <td colspan="4">
+ {{billpatientName}}
+   </td>
+   </tr>
+    <tr>
+   <th colspan="2">Reference Doctor Name
+   </th>
+   <td colspan="4">
+   {{billrefDocName}}
+   </td>
+   </tr>
+
+    <tr>
+      <th>Medicine Code</th>
+        <th>Description</th>
+          <th>Price</th>
+           <th>Manufacturer</th>
+            <th>Vendor</th>
+         <th>Order quantity</th>
+
+    </tr>
+    </thead>
+     <tbody>
+      <tr ng-repeat="obj in medicinDetails">
+        <td>{{obj.medicineCode}} </td>
+          <td> {{obj.medicineDescription}} </td>
+            <td>{{obj.price}}</td>
+                <td>{{obj.manufacturer}} </td>
+                 <td>{{obj.vendor}} </td>
+        <td>{{obj.stockCount}} </td>
+                 <!-- <td>{{billorderQty}} </td>-->
+        </tr>
+
+   <tr>
+   <th colspan="4">Total amount
+   </th>
+   <td colspan="2">{{ getTotal()|currency }}
+   </td>
+   </tr>
+    </table>
+
+    <div>
+    <button type="button" class="btn btn-primary" ng-click="billCheckout();">Checkout</button>
+    </div>
+ </div>
+<!--
+<div ng-repeat="obj in medicinDetails">
+ <div>
+       {{obj.medicineCode}}
+ </div>
+ <div>
+       {{obj.medicineName}}
+ </div>
+  <div>
+       {{obj.medicineDescription}}
+ </div>
+  <div>
+       {{obj.medicineQty}}
+ </div>
+  <div>
+       {{obj.medicinePrice}}
+ </div>
+
+</div> -->

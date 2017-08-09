@@ -1,0 +1,35 @@
+<div class="summaryContainer" ng-controller="summaryController">
+ <!--  <purchase-summary></purchase-summary> -->
+   <table class="table table-bordered">
+    <thead>
+    <tr>
+        <h2>Sales History</h2>
+    </tr>
+    <tr>
+      <th>Medicine Code</th>
+       <th>Description</th>
+        <th>Quantity</th>
+        <th>Patient Name </th>
+        <th>Doctor Name</th>
+         <th>Bill Amount</th>
+   
+    </tr>
+    </thead>
+     <tbody>
+      <tr ng-repeat="summaryObj in summaryData">
+        <td>{{summaryObj.medicineCode}}</td>
+          <td>{{summaryObj.medicineDescription}}</td>
+            <td>{{summaryObj.quantity}}</td>
+            <td>{{summaryObj.patientName}}</td>
+              <td>{{summaryObj.refDoctorName}}</td>
+                <td>{{summaryObj.price|currency}}</td>
+        </tr>
+   
+   
+    </table>
+</div>
+
+  
+
+
+<!--  <purchase-summary-record></purchase-summary-record> -->

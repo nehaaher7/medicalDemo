@@ -1,0 +1,77 @@
+.orderContainerInner
+{
+	
+    padding: 2%;
+	
+}
+
+.orderTxtContainer
+{
+	
+    width: 30%;
+    float: left;
+    text-align: center;
+	
+	
+}
+
+.orderQtyContainer
+{
+	
+    width: 40%;
+    float: left;
+    text-align: center;
+	
+}
+.orderAddbtnContainer
+{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.orderContainer >div
+{
+float: left;
+   /*  padding: 5%; */
+    width: 100%;
+}
+.orderBtnGoContainer  
+{
+text-align: center !important;
+    padding: 2%;
+}
+.orderContainer 
+{ border-top: #ccc 5px solid;
+  border-right: #ccc 5px solid;
+  border-bottom: #777 5px solid;
+  border-left: #777 5px solid;
+  /*   width: 500px;
+    height: 200px; */
+    text-align: center;
+   float:left;
+    padding-top: 2%;
+    /* margin: 5%; */
+}
+.orderMedInputContainer
+{
+	    width: 60%;
+    display: block;
+    float: left;
+}
+.orderQtyInputContainer
+{
+	    width: 30%;
+    display: block;
+    float: left;
+}
+.orderAddInputContainer
+{
+	    width: 10%;
+    display: block;
+    float: left;
+}
+.orderContainer  div
+{
+	text-align: left;
+}

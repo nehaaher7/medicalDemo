@@ -1,0 +1,37 @@
+{
+  "name": "storeDemoApp",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*"
+  },
+  "engine": "node >=0.6.x",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "karma": "^0.13.22",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-coverage": "0.1.5",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-junit-reporter": "^0.4.1",
+    "karma-mocha": "^1.3.0",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
+    "karma-sinon": "^1.0.3",
+    "mocha": "~1.14.0",
+    "protractor": "^4.0.9",
+    "sinon": "^1.17.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "karma start karma.conf.js"
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "storeDemoApp",
+  "license": "storeDemoApp",
+  "bugs": {
+    "url": ""
+  }
+}

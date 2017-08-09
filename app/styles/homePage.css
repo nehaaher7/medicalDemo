@@ -1,0 +1,106 @@
+.btnContainer   {
+ float: left;
+    padding: 5%;
+}
+   .homebtnContainer
+   {
+       /* padding-top: 50%; */
+    padding-left: 10%;
+   }
+
+   .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 70% !important;
+    height: auto;
+    border-radius: 0% !important;
+}
+
+.business-header {
+    height: 400px;
+    background: url('../../../images/bg1.png') center center no-repeat scroll  !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: 100% 100% !important;
+    -o-background-size: cover;
+}
+/**/
+#menu_container
+{
+	padding-top: 5% !important;
+}
+
+#wrapper {
+	width: 200px;
+	height: 240px;
+	margin: 0 auto;
+}
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 800px;
+	height: 240px;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background-color: #444;
+}
+
+.summaryContainer
+{
+	padding:5%;
+}
+
+.parentContainer
+{
+ padding:2%;
+}
+
+
+.custom-li a {
+    display: block;
+    color: #555;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+.customizeForm
+{
+    padding: 10%;
+}
+
+/* .custom-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.custom-li a {
+    display: block;
+    color: #555;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+.custom-li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.custom-li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+} */
