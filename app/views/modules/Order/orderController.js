@@ -13,7 +13,7 @@ medicalDemoApp.controller('orderController', ['$scope','$http','$location','$roo
     }
   },
 
-  $scope.goToMedicineDetails= function(orderQty){
+  $scope.goToMedicineDetails= function(){
 
     if( $scope.disableflag==false){
 			$rootScope.patientNameVal=$scope.patientName;
@@ -38,7 +38,7 @@ medicalDemoApp.controller('orderController', ['$scope','$http','$location','$roo
 				//$location.path('/bill');
 				$scope.medicineDetails=res;
 			medicineDetailsService.set(res);
-      console.log("contacts",  res)
+      console.log("contacts",  	$scope.medicineDetails)
 			 $location.path('/bill');
 		});
 	}},

@@ -17,6 +17,7 @@ describe('MyController', function(){
       scope.checkMandatoryFields ();
       expect(scope.disableflag).to.equal(false);
     }));
+      });
 
     describe('check flag is set to false when order quantity AND medicine code are null', function(){
     it('disableflag should be true when values order quantity and medicine code are null ', inject(function($rootScope,$controller){
@@ -29,58 +30,51 @@ describe('MyController', function(){
     }));
     });
 
-//  describe('medicineDetailsService exists', function(){
-//  it('medicineDetailsService exists', inject(function(medicineDetailsService) {
-//  expect(medicineDetailsService).to.exist;
-// }));
-//  });
+describe('Services: orderService ', function () {
 
-    describe('goToMedicineDetails', function(){
-      it('should be added to scope', inject(function($controller, $httpBackend,medicineDetailsService){
-        var scope = {};
-        $httpBackend
-          .when('PUT', '/order')
-          .respond([
-            {"medicineCode":"2","medicineDescription":"Naomi","price":"22","manufacturer":"Himalayas","vendor":"Himalayas","stockCount":"2"}
-          ]);
-        var myController = $controller('orderController', {
-          $scope: scope
+    var scope, httpBackend;
+
+    beforeEach(function () {
+
+        //load the module.
+       module('medicalDemoApp')
+
+        //inject your service for testing.
+        inject(function ($httpBackend, $injector, $rootScope,$controller) {
+            orderService = $injector.get('orderService');
+            httpBackend = $httpBackend;
+            scope = $rootScope.$new();
+            
         });
 
-        var abc=[
-          {"medicineCode":"2","medicineDescription":"Naomi","price":"22","manufacturer":"Himalayas","vendor":"Himalayas","stockCount":"2"}
-        ];
-       // $httpBackend.flush();
-        expect(scope.medicinDetails).to.equal(abc);
-      }));
     });
 
+    //check our expectations were missed in tests.
+    afterEach(function () {
+        httpBackend.verifyNoOutstandingExpectation();
+        httpBackend.verifyNoOutstandingRequest();
+    });
+
+    it('should return msg and verify expexctations', function () {
+        
+        var returnData = [{"medicineCode":"2","medicineDescription":"Naomi","price":"22","manufacturer":"Himalayas","vendor":"Himalayas","stockCount":"2"}];
+        
+        httpBackend.whenGET('/order').respond(returnData);
+        
+        var abc=[{"medicineCode":"3","medicineDescription":null,"price":null,"manufacturer":null,"vendor":null,"stockCount":null}];
+        //promise object
+        var returnedPromise = orderService.getOrderData(abc);
+        
+        //we handle with promise object
+        returnedPromise.then(function(data){
+          expect(data).to.be.a('array');
+          expect(data[0]).to.include({"medicineCode":"2"});
+         });
+        
+        //flush for http request
+        httpBackend.flush();
+
+    });
+
+ });
   });
-});
-
-/*
-describe('orderController', function() {
-  beforeEach(module('medicalDemoApp'));
-//  var $controller;
-
- /!* beforeEach(inject(function(_$controller_){
-    // The injector unwraps the underscores (_) from around the parameter names when matching
-    $controller = _$controller_;
-  }));*!/
-
-  it('sets the strength to "strong" if the password length is >8 chars', inject(function($controller) {
-      var scope = {};
-      var myController = $controller('orderController', {
-        $scope: scope
-      });
-
-      $scope.orderQty="2";
-      $scope.medicineID="2";
-      scope.checkMandatoryFields();
-      //var controller = $controller('orderController', { $scope: $scope });
-      //$scope.checkMandatoryFields();
-      expect(scope.disableflag).toEqual(false);
-
-});
-
-});*/
